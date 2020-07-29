@@ -50,7 +50,7 @@ class MPT():
             self.detector = keypointrcnn_resnet50_fpn(pretrained=True).to(self.device).eval()
         elif detector_type == 'yolo':
             self.detector = YOLOv3(
-                device=self.device, img_size=yolo_img_size, person_detector=True, video=True, return_dict=True
+                device=self.device, img_size=yolo_img_size, person_detector=False, video=True, return_dict=True
             )
         else:
             raise ModuleNotFoundError
